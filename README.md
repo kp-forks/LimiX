@@ -305,9 +305,9 @@ The code in this repository is open-sourced under the [Apache-2.0](LICENSE.txt) 
 
 # ➤ Citation
 ```
-@article{LimiX,
-  title={LimiX:Unleashing Structured-Data Modeling Capability for Generalist Intelligence},
-  author={LimiXTeam},
+@article{zhang2025limix,
+  title={Limix: Unleashing structured-data modeling capability for generalist intelligence},
+  author={Zhang, Xingxuan and Ren, Gang and Yu, Han and Yuan, Hao and Wang, Hui and Li, Jiansheng and Wu, Jiayun and Mo, Lang and Mao, Li and Hao, Mingchao and others},
   journal={arXiv preprint arXiv:2509.03505},
   year={2025}
 }
