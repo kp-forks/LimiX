@@ -8,7 +8,7 @@ LimiX是首个面向通用智能研发的结构化数据大模型。模型以变
 [![arXiv-2509.03505](https://img.shields.io/badge/arXiv-2509.03505-b31b1b)](https://arxiv.org/abs/2509.03505)
 [![Project Page](https://img.shields.io/badge/LimiX-Project%20Page-green)](https://www.limix.ai/)
 [![ModelScope](https://img.shields.io/badge/ModelScope-LimiX-f58c20)](https://modelscope.cn/organization/stable-ai)
-[![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97%20HuggingFace-LimiX-4285F4)](https://huggingface.co/limix-ldm-ai/LimiX)
+[![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97%20HuggingFace-LimiX-4285F4)](https://huggingface.co/stable-ai)
 
 ## 📢 更新动态
 - **[2026.06.04] LimiX 后续延伸研究成果被 ICML 会议录用！**
