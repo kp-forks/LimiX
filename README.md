@@ -2,9 +2,24 @@
   <img src="./doc/LimiX-Logo.png" alt="LimiX summary" width="89%">
 </div>
 
+# LimiX: Large Structured-Data Foundation Model(LDM)
+LimiX is the first structured-data foundation model built for general intelligence. Focused on joint distribution modeling of variables and missing values, one single model covers the full suite of tabular tasks: classification, regression, missing value imputation and tabular generation, with no need for task-specific network design. It surpasses XGBoost, classic tabular deep learning models and existing tabular foundation models on benchmarks of 10 mainstream structured datasets. All model resources are open-sourced under the Apache 2.0 License.
+
+[![arXiv-2509.03505](https://img.shields.io/badge/arXiv-2509.03505-b31b1b)](https://arxiv.org/abs/2509.03505)
+[![Project Page](https://img.shields.io/badge/LimiX-Project%20Page-green)](https://www.limix.ai/)
+[![ModelScope](https://img.shields.io/badge/ModelScope-LimiX-f58c20)](https://modelscope.cn/organization/stable-ai)
+[![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97%20HuggingFace-LimiX-4285F4)](https://huggingface.co/limix-ldm-ai/LimiX)
+
 #  :boom: News
- - 2025-11-10: LimiX-2M is officially released! Compared to LimiX-16M, this smaller variant offers significantly lower GPU memory usage and faster inference speed. The retrieval mechanism has also been enhanced, further improving model performance while reducing both inference time and memory consumption.
- - 2025-08-29: LimiX V1.0 Released.
+## 📢 News
+- **[2026.06.04] Our new follow-up work of LimiX has been accepted by ICML!**
+  Paper: [arXiv:2606.04485](https://arxiv.org/pdf/2606.04485), extended research based on original LimiX(arXiv:2509.03505) structured-data foundation model.[![arXiv-2606.04485](https://img.shields.io/badge/arXiv-2606.04485-b31b1b)](https://arxiv.org/pdf/2606.04485)
+- **[2025.11.10] LimiX-2M is officially released!**
+  Compared to LimiX-16M, this smaller variant offers significantly lower GPU memory usage and faster inference speed. The retrieval mechanism has also been enhanced, further improving model performance while reducing both inference time and memory consumption.
+- **[2025.09.03] Initial LimiX paper released on arXiv**
+  Original paper: [arXiv:2509.03505](https://arxiv.org/abs/2509.03505), the first large structured-data foundation model for generalist intelligence, open-source under Apache 2.0 license.
+- **[2025.08.29] LimiX V1.0 Released.**
+  The first official stable version of LimiX structured-data foundation model is open sourced.
 
 #  ⚡ Latest Results Compared with SOTA Models
 <div align="center">
