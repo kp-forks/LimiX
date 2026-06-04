@@ -2,9 +2,24 @@
   <img src="./doc/LimiX-Logo.png" alt="LimiX summary" width="89%">
 </div>
 
-#  :boom:  最新进展
- - 2025-11-10: LimiX-2M 正式发布！与 LimiX-16M 相比，此版本在显著降低 GPU 内存占用的同时，实现了更快的推理速度。在此基础上，LimiX 的样本检索机制也得到了优化，模型的性能进一步提升，并有效减少了该模式下的推理时间与显存消耗
- - 2025-08-29: LimiX V1.0 发布
+# LimiX：面向结构化数据的大基础模型（LDM）
+LimiX是首个面向通用智能研发的结构化数据大模型。模型以变量与缺失值的联合分布建模为核心，单模型即可一站式完成全品类表格任务：分类、回归、缺失值填充与表格数据生成，无需针对不同任务定制专属网络结构。在10项主流结构化数据集基准测试上，模型效果全面优于XGBoost、传统表格深度学习模型以及现有的表格基座模型。项目全部模型资源依据Apache 2.0开源协议开放。
+
+[![arXiv-2509.03505](https://img.shields.io/badge/arXiv-2509.03505-b31b1b)](https://arxiv.org/abs/2509.03505)
+[![Project Page](https://img.shields.io/badge/LimiX-Project%20Page-green)](https://www.limix.ai/)
+[![ModelScope](https://img.shields.io/badge/ModelScope-LimiX-f58c20)](https://modelscope.cn/organization/stable-ai)
+[![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97%20HuggingFace-LimiX-4285F4)](https://huggingface.co/limix-ldm-ai/LimiX)
+
+## 📢 更新动态
+- **[2026.06.04] LimiX 后续延伸研究成果被 ICML 会议录用！**
+  论文：[arXiv:2606.04485](https://arxiv.org/pdf/2606.04485)，该工作是初代LimiX（arXiv:2509.03505）结构化数据基础模型的拓展研究。[![arXiv-2606.04485](https://img.shields.io/badge/arXiv-2606.04485-b31b1b)](https://arxiv.org/pdf/2606.04485)
+- **[2025.11.10] LimiX-2M 轻量化模型正式发布！**
+  相较LimiX-16M版本，该轻量模型大幅降低GPU显存占用、提升推理速度；同时优化检索机制，在缩减推理耗时与内存开销的前提下进一步提升模型效果。
+- **[2025.09.03] LimiX 论文于arXiv上线发布**
+  原论文：[arXiv:2509.03505](https://arxiv.org/abs/2509.03505)，LimiX是面向通用智能的首款结构化数据大模型，项目基于Apache 2.0协议开源。
+- **[2025.08.29] LimiX V1.0 正式发布**
+  LimiX结构化数据基础模型首个稳定官方版本开源上线。
+  
 # ⚡ 最新评测
 <div align="center">
   <img src="./doc/BCCO-CLS.png"  width="30%">
