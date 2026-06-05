@@ -12,8 +12,8 @@ LimiX is the first structured-data foundation model built for general intelligen
 
 #  :boom: News
 ## 📢 News
-- **[2026.06.04] Our new follow-up work of LimiX has been accepted by ICML!**
-  Paper: [arXiv:2606.04485](https://arxiv.org/pdf/2606.04485), extended research based on original LimiX(arXiv:2509.03505) structured-data foundation model.[![arXiv-2606.04485](https://img.shields.io/badge/arXiv-2606.04485-b31b1b)](https://arxiv.org/pdf/2606.04485)
+- **[2026.06.04] LimiX-2M has been accepted by ICML!**
+  , extended research based on original LimiX(arXiv:2509.03505) structured-data foundation model.[![arXiv-2606.04485](https://img.shields.io/badge/arXiv-2606.04485-b31b1b)](https://arxiv.org/pdf/2606.04485)
 - **[2025.11.10] LimiX-2M is officially released!**
   Compared to LimiX-16M, this smaller variant offers significantly lower GPU memory usage and faster inference speed. The retrieval mechanism has also been enhanced, further improving model performance while reducing both inference time and memory consumption.
 - **[2025.09.03] Initial LimiX paper released on arXiv**
