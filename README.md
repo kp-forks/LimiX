@@ -119,7 +119,6 @@ class LimiXPredictor:
                  categorical_features_indices:List[int]|None=None,
                  outlier_remove_std: float=12,
                  softmax_temperature:float=0.9,
-                 task_type: Literal['Classification', 'Regression']='Classification',
                  mask_prediction:bool=False,
                  inference_with_DDP: bool = False,
                  seed:int=0)
@@ -133,19 +132,19 @@ class LimiXPredictor:
 | categorical_features_indices | list | The indices of categorical columns in the tabular data |
 | outlier_remove_std | float | The threshold is employed to remove outliers, defined as values that are multiples of the standard deviation |
 | softmax_temperature | float | The temperature used to control the behavior of softmax operator |
-| task_type | str | The task type which can be either "Classification" or "Regression" |
 | mask_prediction | bool | Whether to enable missing value imputation |
 | inference_with_DDP | bool | Whether to enable DDP during inference |
 | seed | int | The seed to control random states |
 ### Predict
 ```python
-def predict(self, x_train:np.ndarray, y_train:np.ndarray, x_test:np.ndarray) -> np.ndarray:
+def predict(self, x_train:np.ndarray, y_train:np.ndarray, x_test:np.ndarray, task_type:Literal['Classification', 'Regression']='Classification') -> np.ndarray:
 ```
 | Parameter   | Data Type    | Description           |
 | ------- | ---------- | ----------------- |
 | x_train  | np.ndarray  | The input features of the training set   |
 | y_train  | np.ndarray  | The target variable of the training set   |
 | x_test   | np.ndarray  | The input features of the test set   |
+| task_type | str | The task type which can be either "Classification" or "Regression" |
 
 ## Inference Configuration File Description
 | Configuration File Name | Description | Difference |
@@ -250,7 +249,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.5, random_
 model_file = hf_hub_download(repo_id="stableai-org/LimiX-16M", filename="LimiX-16M.ckpt", local_dir="./cache")
 
 clf = LimiXPredictor(device=torch.device('cuda'), model_path=model_file, inference_config='config/cls_default_retrieval.json')
-prediction = clf.predict(X_train, y_train, X_test)
+prediction = clf.predict(X_train, y_train, X_test, task_type="Classification")
 
 print("roc_auc_score:", roc_auc_score(y_test, prediction[:, 1]))
 print("accuracy_score:", accuracy_score(y_test, np.argmax(prediction, axis=1)))
@@ -294,7 +293,7 @@ y_test_normalized = (y_test - y_mean) / y_std
 model_path = hf_hub_download(repo_id="stableai-org/LimiX-16M", filename="LimiX-16M.ckpt", local_dir="./cache")
 
 model = LimiXPredictor(device=torch.device('cuda'), model_path=model_path, inference_config='config/reg_default_retrieval.json')
-y_pred = model.predict(X_train, y_train_normalized, X_test)    
+y_pred = model.predict(X_train, y_train_normalized, X_test, task_type="Regression")    
 
 # Compute RMSE and R²
 y_pred = y_pred.to('cpu').numpy()

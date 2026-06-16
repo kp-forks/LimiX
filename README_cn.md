@@ -109,7 +109,6 @@ class LimiXPredictor:
                  categorical_features_indices:List[int]|None=None,
                  outlier_remove_std: float=12,
                  softmax_temperature:float=0.9,
-                 task_type: Literal['Classification', 'Regression']='Classification',
                  mask_prediction:bool=False,
                  inference_with_DDP: bool = False,
                  seed:int=0)
@@ -123,19 +122,19 @@ class LimiXPredictor:
 | categorical_features_indices | list | 数据表中，分类列的序号 |
 | outlier_remove_std | float | 移除异常值时采用的标准差倍数阈值 |
 | softmax_temperature | float | Softmax 温度 或 温度系数 |
-| task_type | str | 任务类型，取值范围为：Classification, Regression |
 | mask_prediction | bool | 是否启用缺失值插补功能 |
 | inference_with_DDP | bool | 在推理时是否开启DDP |
 | seed | int | 随机种子 |
 ### 数据推理
 ```python
-def predict(self, x_train:np.ndarray, y_train:np.ndarray, x_test:np.ndarray) -> np.ndarray:
+def predict(self, x_train:np.ndarray, y_train:np.ndarray, x_test:np.ndarray, task_type: Literal['Classification', 'Regression']='Classification') -> np.ndarray:
 ```
 | 参数名   | 数据类型    | 参数说明           |
 | ------- | ---------- | ----------------- |
 | x_train  | np.ndarray  | 训练集的 feature   |
 | y_train  | np.ndarray  | 训练集的预测目标   |
 | x_test   | np.ndarray  | 测试集的 feature   |
+| task_type | str | 任务类型，取值范围为：Classification, Regression |
 
 ## ➩ 推理配置文件说明
 | 配置文件名称 | 配置文件说明 | 差异 |
@@ -229,7 +228,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.5, random_
 model_file = hf_hub_download(repo_id="stableai-org/LimiX-16M", filename="LimiX-16M.ckpt", local_dir="./cache")
 
 clf = LimiXPredictor(device=torch.device('cuda'), model_path=model_file, inference_config='config/cls_default_retrieval.json')
-prediction = clf.predict(X_train, y_train, X_test)
+prediction = clf.predict(X_train, y_train, X_test, task_type="Classification")
 
 print("roc_auc_score:", roc_auc_score(y_test, prediction[:, 1]))
 print("accuracy_score:", accuracy_score(y_test, np.argmax(prediction, axis=1)))
@@ -273,7 +272,7 @@ y_test_normalized = (y_test - y_mean) / y_std
 model_path = hf_hub_download(repo_id="stableai-org/LimiX-16M", filename="LimiX-16M.ckpt", local_dir="./cache")
 
 model = LimiXPredictor(device=torch.device('cuda'), model_path=model_path, inference_config='config/reg_default_retrieval.json')
-y_pred = model.predict(X_train, y_train_normalized, X_test)    
+y_pred = model.predict(X_train, y_train_normalized, X_test, task_type="Regression")    
 
 # Compute RMSE and R²
 y_pred = y_pred.to('cpu').numpy()
